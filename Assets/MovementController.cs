@@ -2,14 +2,28 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    Rigidbody m_Rigidbody;
-    public float m_Thrust = 1f;
+    private Rigidbody rb;
+    public float thrust = 5;
+    public int score;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
+
+    public void scoreSum()
+    {
+        score += 1;
+        Debug.Log(score);
+        if (score == 7)
+        {
+            Debug.Log("Wygra³eœ!");
+        }
+    }
+    
+
 
     // Update is called once per frame
     void Update()
@@ -17,22 +31,22 @@ public class MovementController : MonoBehaviour
 
         if (Input.GetKey("w"))
         {
-            m_Rigidbody.AddForce(0,0,1 * m_Thrust);
+            rb.AddForce(0,0,1 * thrust);
 
         }
         if (Input.GetKey("s"))
         {
-            m_Rigidbody.AddForce(0,0,-1 * m_Thrust);
+            rb.AddForce(0,0,-1 * thrust);
 
         }
         if (Input.GetKey("a"))
         {
-            m_Rigidbody.AddForce(-1,0,0 * m_Thrust);
+           rb.AddForce(-1,0,0 * thrust);
 
         }
         if (Input.GetKey("d"))
         {
-            m_Rigidbody.AddForce(1,0,0 * m_Thrust);
+            rb.AddForce(1,0,0 * thrust);
 
         }
     }

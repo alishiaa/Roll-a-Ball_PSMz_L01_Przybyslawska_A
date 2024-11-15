@@ -14,9 +14,10 @@ public class Collectible : MonoBehaviour
     {
        
        
-        collision.gameObject.GetComponent<MovementController>().scoreSum();
+        collision.gameObject.GetComponent<MovementController>().Score();
        
-        gameObject.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+        
     }
    
   

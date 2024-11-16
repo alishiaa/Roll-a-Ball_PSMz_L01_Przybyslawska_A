@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class MovementController : MonoBehaviour
 {
@@ -59,6 +61,10 @@ public class MovementController : MonoBehaviour
                 wonText.text = "Wygra³eœ!";
             }
             Debug.Log("Wygra³eœ!");
+            SceneManager.LoadScene("Scene2");
+           
+
+
         }
     }
 }

@@ -1,11 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    public AudioSource audio;
+    public new AudioSource audio;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+ 
     void opoznienie()
     {
         Invoke(nameof(Off), 1.0f);
@@ -18,8 +18,6 @@ public class Collectible : MonoBehaviour
     }
     void OnTriggerEnter(Collider collision)
     {
-       
-       
         collision.gameObject.GetComponent<MovementController>().Score();
         
      audio.Play();
@@ -31,8 +29,7 @@ public class Collectible : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-  
-    // Update is called once per frame
+ 
     void Update()
     {
         transform.Rotate(10 * Time.deltaTime, 0, 0);

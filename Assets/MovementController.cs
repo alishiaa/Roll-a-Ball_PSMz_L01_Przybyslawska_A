@@ -54,6 +54,10 @@ public class MovementController : MonoBehaviour
         {
             rb.AddForce(1 * thrust, 0, 0);
         }
+        if (Input.GetKey("space"))
+        {
+            rb.AddForce(0, 1, 0);
+        }
     }
 
     public void Score()

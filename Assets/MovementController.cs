@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class MovementController : MonoBehaviour
 {
     private Rigidbody rb;
-    public float thrust = 20;
+    public float thrust = 10f;
+    public float jump = 200f;
     public int score;
     public Text scoreText;
     public Text wonText;
@@ -54,9 +55,9 @@ public class MovementController : MonoBehaviour
         {
             rb.AddForce(1 * thrust, 0, 0);
         }
-        if (Input.GetKey("space"))
+        if (Input.GetKeyDown("space"))
         {
-            rb.AddForce(0, 1, 0);
+            rb.AddForce(0, 1 * jump, 0);
         }
     }
 
